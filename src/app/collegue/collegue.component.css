@@ -1,5 +1,19 @@
 .boutons {
-  display:flex;
+  display: flex;
   width: 400px;
   justify-content: space-between;
+  margin: auto;
+}
+
+.image {
+  width: 400px;
+}
+
+ img {
+  height: 100%;
+  width: 90%;
+}
+
+.collegue {
+  display: flex;
 }
