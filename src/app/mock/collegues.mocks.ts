@@ -1,4 +1,6 @@
-export const collegueMock = {
+import Collegue from "../models/Collegue";
+
+export const collegueMock:Collegue = {
   matricule: "001",
   nom: "Doe",
   prenoms: "John",

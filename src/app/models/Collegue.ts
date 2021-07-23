@@ -6,4 +6,5 @@ export default class Collegue
   email: string;
   dateDeNaissance: Date;
   photoUrl: string;
+  
 }
