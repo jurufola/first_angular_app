@@ -9,5 +9,5 @@ import { collegueMock } from './mock/collegues.mocks';
 })
 export class AppComponent {
   title = 'bonjour-angular';
-  unObjetColleguefourni: Collegue = collegueMock;
+  unObjetColleguefourni: Collegue = collegueMock[5];
 }
