@@ -7,7 +7,7 @@ import Collegue from '../models/Collegue';
   styleUrls: ['./collegue.component.css']
 })
 export class CollegueComponent implements OnInit {
-
+  showEmailInputfield: boolean = false;
   @Input() col:Collegue;
   constructor() { }
 
@@ -16,6 +16,7 @@ export class CollegueComponent implements OnInit {
 
   modif(): void{
     console.log("Je modifie le college");
+    this.showEmailInputfield = true;
   }
 
   creerNouvCollegue(){

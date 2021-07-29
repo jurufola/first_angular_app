@@ -3,14 +3,32 @@
     <img src={{col.photoUrl}} alt="image collègue">
   </div>
   <div class="infos">
-    <p>Matricule :  {{col.matricule}}</p>
-    <p>Nom :  {{col.nom}}</p>
+    <p>Matricule : {{col.matricule}}</p>
+    <p>Nom : {{col.nom}}</p>
     <p>Prénoms : {{col.prenoms}}</p>
     <p>Date de naissance : {{col.dateDeNaissance}}</p>
-    <p>Email : {{col.email}}</p>
+
+    <div *ngIf="showEmailInputfield; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <p>
+        <label for="email">Email : </label>&nbsp;
+        <input type="email" name="email" id="email">
+      </p>
+      <p>
+        <label for="photo">Photo : </label>&nbsp;
+        <input type="text" name="photo" id="photo">
+      </p>
+    </ng-template>
+    <ng-template #elseBlock>
+      <p>Email : {{col.email}}</p>
+    </ng-template>
   </div>
 </div>
 <div class="boutons mt-3">
-  <a href="#" (click)="creerNouvCollegue()"> créer un nouveau collègue</a>
-  <button class="btn btn-primary" (click)="modif()"> Modifier</button>
+  <a href="#" (click)="creerNouvCollegue()" *ngIf="!showEmailInputfield" class="mr-5"> créer un nouveau collègue</a>
+  <!-- <div *ngIf="showEmailInputfield; then thenBlock else elseBlock"></div>
+  <ng-template #thenBlock><button  class="btn btn-primary" (click)="modif()"> Valider</button></ng-template>
+  <ng-template #elseBlock><button  class="btn btn-primary" (click)="modif()"> Modifier</button></ng-template> -->
+  <button *ngIf="showEmailInputfield" class="btn btn-primary float-right" (click)="modif()"> Valider</button>
+  <button *ngIf="!showEmailInputfield" class="btn btn-primary" (click)="modif()"> Modifier</button>
 </div>
