@@ -7,6 +7,7 @@ import { BonjourComponent } from './bonjour/bonjour.component';
 import { BonjourAvecPrenomComponent } from './bonjour-avec-prenom/bonjour-avec-prenom.component';
 import { CollegueComponent } from './collegue/collegue.component';
 import { CollegueParNomComponent } from './collegue-par-nom/collegue-par-nom.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CollegueParNomComponent } from './collegue-par-nom/collegue-par-nom.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

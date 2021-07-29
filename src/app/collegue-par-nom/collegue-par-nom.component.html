@@ -2,11 +2,14 @@
   <form class="form-inline">
     <div class="form-group mr-3">
       <label for="rechercheparnom" class="mr-3">Recherche par nom </label>
-      <input type="text" class="form-control" id="rechercheparnom">
+      <input type="text" class="form-control" name="rechercheparnom" id="rechercheparnom" [(ngModel)]="nom">
     </div>
-    <button type="submit" class="btn btn-primary">Rechercher</button>
+    <button type="submit" class="btn btn-primary" (click)="recherche()">Rechercher</button>
   </form>
-  <div class="result">
-
+  <div class="result" *ngIf="listMatricule.length">
+      <h3>La liste des matricules des collègues de nom : {{ nom }}</h3>
+      <ul>
+        <li *ngFor="let matricule of listMatricule">{{ matricule }}</li>
+      </ul>
   </div>
 </div>
