@@ -4,9 +4,9 @@
   </div>
   <div class="infos">
     <p>Matricule : {{col.matricule}}</p>
-    <p>Nom : {{col.nom}}</p>
+    <p>Nom : {{col.nom | uppercase}}</p>
     <p>Prénoms : {{col.prenoms}}</p>
-    <p>Date de naissance : {{col.dateDeNaissance}}</p>
+    <p>Date de naissance : {{col.dateDeNaissance | date: 'longDate'}}</p>
 
     <div *ngIf="showEmailInputfield; then thenBlock else elseBlock"></div>
     <ng-template #thenBlock>
