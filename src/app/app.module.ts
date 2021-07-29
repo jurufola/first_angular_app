@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BonjourComponent } from './bonjour/bonjour.component';
 import { BonjourAvecPrenomComponent } from './bonjour-avec-prenom/bonjour-avec-prenom.component';
 import { CollegueComponent } from './collegue/collegue.component';
+import { CollegueParNomComponent } from './collegue-par-nom/collegue-par-nom.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { CollegueComponent } from './collegue/collegue.component';
     AppComponent,
     BonjourComponent,
     BonjourAvecPrenomComponent,
-    CollegueComponent
+    CollegueComponent,
+    CollegueParNomComponent
   ],
   imports: [
     BrowserModule,

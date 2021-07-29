@@ -1,7 +1,11 @@
-<h1>Application Employé Du Mois</h1>
-<app-bonjour></app-bonjour>
-<app-bonjour-avec-prenom [prenom]="'Amanou'"></app-bonjour-avec-prenom>
-<app-bonjour-avec-prenom [prenom]="'Wany'"></app-bonjour-avec-prenom>
-<app-bonjour-avec-prenom [prenom]="'Maïna'"></app-bonjour-avec-prenom>
-<hr>
-<app-collegue [col]="unObjetColleguefourni"></app-collegue>
+<h1 class="text-center mb-5">Administration Collègue</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <app-collegue-par-nom></app-collegue-par-nom>
+    </div>
+    <div class="col-6">
+      <app-collegue [col]="unObjetColleguefourni"></app-collegue>
+    </div>
+  </div>
+</div>
