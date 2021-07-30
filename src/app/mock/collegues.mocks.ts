@@ -4,7 +4,7 @@ export const collegueMock: Collegue[] = [
   {
     matricule: "001",
     nom: "HAÏDARA",
-    prenoms: "Moulaye Labass Chaick",
+    prenoms: "Moulaye Labass Cheick",
     dateDeNaissance: new Date("September 28, 1980"),
     email: "johndoe@company.com",
     photoUrl: "../../assets/images/20210223_002650.jpg"

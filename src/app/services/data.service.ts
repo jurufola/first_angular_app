@@ -17,13 +17,13 @@ export class DataService {
     }
     );
 
-    return listeMatricule
+    return listeMatricule;
   }
   recupererCollegueCourant(): Collegue {
     // TODO retourner le collègue fictif à partir du fichier
     //src/app/mock/collegues.mock.ts.
 
 
-    return collegueMock[5];
+    return collegueMock[0];
   }
 }

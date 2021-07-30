@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { collegueMock } from '../mock/collegues.mocks';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-collegue-par-nom',
@@ -9,7 +10,7 @@ import { collegueMock } from '../mock/collegues.mocks';
 export class CollegueParNomComponent implements OnInit {
   nom:string;
   listMatricule:string[] = new Array();
-  constructor() { }
+  constructor(private _dataService: DataService) { }
 
   ngOnInit(): void {
   }
@@ -18,16 +19,7 @@ export class CollegueParNomComponent implements OnInit {
  */
   recherche() {
     //On vide la liste des matricule avent la recherche pour ne plas poluer les futur recherches
-    this.listMatricule = [];
-    collegueMock.forEach(collegue => {
-      //console.log(this);
-      console.log(collegue);
-      if (collegue.nom.toUpperCase()===this.nom.toUpperCase()) {
-        console.log(collegue);
-        this.listMatricule.push(collegue.matricule);
-      }
-    });
-    console.log(this.listMatricule);
+    this.listMatricule = this._dataService.rechercherParNom(this.nom);
   }
 
 }
