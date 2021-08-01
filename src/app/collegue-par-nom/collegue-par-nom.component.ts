@@ -9,7 +9,7 @@ import { DataService } from '../services/data.service';
 })
 export class CollegueParNomComponent implements OnInit {
   nom:string;
-  listMatricule:string[] = new Array();
+  listMatricule: string[] = new Array();
   constructor(private _dataService: DataService) { }
 
   ngOnInit(): void {
@@ -19,7 +19,11 @@ export class CollegueParNomComponent implements OnInit {
  */
   recherche() {
     //On vide la liste des matricule avent la recherche pour ne plas poluer les futur recherches
-    this.listMatricule = this._dataService.rechercherParNom(this.nom);
+     this._dataService.rechercherParNom(this.nom)
+     .subscribe((data: string[]) => {
+          this.listMatricule = data;
+          console.log(this.listMatricule);
+     });
   }
 
 }
