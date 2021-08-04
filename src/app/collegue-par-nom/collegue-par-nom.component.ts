@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { collegueMock } from '../mock/collegues.mocks';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -10,6 +9,7 @@ import { DataService } from '../services/data.service';
 export class CollegueParNomComponent implements OnInit {
   nom:string;
   listMatricule: string[] = new Array();
+  @Output() callEvent: EventEmitter<string> = new EventEmitter<string>(); // emetteur d'evenement
   constructor(private _dataService: DataService) { }
 
   ngOnInit(): void {
@@ -25,5 +25,12 @@ export class CollegueParNomComponent implements OnInit {
           console.log(this.listMatricule);
      });
   }
-
+/**
+ * Envoie le matricule du collègué à charger au composant parent c'est à dire AppComponant
+ * afin de valoriser l'attribut un unObjetColleguefourni qui sera à son tour passé au composant CollegueComponent
+ * @param matricule
+ */
+  sendMatricule(matricule: string) {
+    this.callEvent.emit(matricule);
+  }
 }

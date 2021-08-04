@@ -1,10 +1,10 @@
 <h1 class="text-center mb-5">Administration Collègue</h1>
 <div class="container">
   <div class="row">
-    <div class="col-6">
-      <app-collegue-par-nom></app-collegue-par-nom>
+    <div class="col-md-6 mb-sm-3">
+      <app-collegue-par-nom (callEvent)="affichCollegue($event)"></app-collegue-par-nom>
     </div>
-    <div class="col-6">
+    <div class="col-md-6">
       <app-collegue [col]="unObjetColleguefourni"></app-collegue>
     </div>
   </div>

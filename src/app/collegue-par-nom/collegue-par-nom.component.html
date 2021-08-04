@@ -9,7 +9,7 @@
   <div class="result" *ngIf="listMatricule.length">
       <h3>La liste des matricules des collègues de nom : {{ nom }}</h3>
       <ul>
-        <li *ngFor="let matricule of listMatricule">{{ matricule }}</li>
+        <li *ngFor="let matricule of listMatricule"><a href="#" (click)="sendMatricule(matricule)">{{ matricule }}</a></li>
       </ul>
   </div>
 </div>
