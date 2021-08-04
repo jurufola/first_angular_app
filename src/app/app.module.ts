@@ -8,8 +8,9 @@ import { BonjourComponent } from './bonjour/bonjour.component';
 import { BonjourAvecPrenomComponent } from './bonjour-avec-prenom/bonjour-avec-prenom.component';
 import { CollegueComponent } from './collegue/collegue.component';
 import { CollegueParNomComponent } from './collegue-par-nom/collegue-par-nom.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataService } from './services/data.service';
+import { CollegueCreerComponent } from './collegue-creer/collegue-creer.component';
 
 
 @NgModule({
@@ -18,12 +19,14 @@ import { DataService } from './services/data.service';
     BonjourComponent,
     BonjourAvecPrenomComponent,
     CollegueComponent,
-    CollegueParNomComponent
+    CollegueParNomComponent,
+    CollegueCreerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [DataService],

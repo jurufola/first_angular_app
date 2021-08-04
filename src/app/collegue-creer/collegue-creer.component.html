@@ -1,0 +1,56 @@
+<form [formGroup]="createComponentForm" novalidate>
+  <div class="form-group">
+    <label for="nom">Nom</label>
+    <input type="text" class="form-control" id="nom" formControlName="nom">
+  </div>
+  <div *ngIf="createComponentForm.controls['nom'].invalid && createComponentForm.controls['nom'].dirty"
+    class="alert alert-danger">
+    <div *ngIf="createComponentForm.controls['nom'].errors.required">
+      Le nom est requis
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="prenoms">Prénoms</label>
+    <input type="text" class="form-control" id="prenoms" formControlName="prenoms">
+  </div>
+  <div *ngIf="createComponentForm.controls['prenoms'].invalid && createComponentForm.controls['prenoms'].dirty"
+    class="alert alert-danger">
+    <div *ngIf="createComponentForm.controls['prenoms'].errors.required">
+      Le(s) prénom(s) est(sont) requis
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="dateNaissance">Date de naissance</label>
+    <input type="date" class="form-control" id="dateNaissance" formControlName="dateDeNaissance">
+  </div>
+  <div *ngIf="createComponentForm.controls['dateDeNaissance'].invalid && createComponentForm.controls['dateDeNaissance'].dirty"
+    class="alert alert-danger">
+    <div *ngIf="createComponentForm.controls['dateDeNaissance'].errors.required">
+      la date est requise
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" formControlName="email">
+  </div>
+  <div *ngIf="createComponentForm.controls['email'].invalid && createComponentForm.controls['email'].dirty"
+    class="alert alert-danger">
+    <div *ngIf="createComponentForm.controls['email'].errors.required">
+      L' email est requis
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="photoUrl">Photo url</label>
+    <input type="text" class="form-control" id="photoUrl" formControlName="photoUrl">
+  </div>
+  <div *ngIf="createComponentForm.controls['photoUrl'].invalid && createComponentForm.controls['photoUrl'].dirty"
+    class="alert alert-danger">
+    <div *ngIf="createComponentForm.controls['photoUrl'].errors.required">
+      L' url de la photo est requise
+    </div>
+    <div *ngIf="createComponentForm.controls['photoUrl'].invalid">
+      L' url de la photo doit contenir au moins 7 caractères
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="createComponentForm.pristine || createComponentForm.invalid" (click)=addCollegue()>Creer</button>
+</form>

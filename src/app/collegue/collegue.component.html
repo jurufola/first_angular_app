@@ -25,7 +25,7 @@
   </div>
 </div>
 <div class="boutons mt-3">
-  <a href="#" (click)="creerNouvCollegue()" *ngIf="!showEmailInputfield" class="mr-5"> créer un nouveau collègue</a>
+  <a href="#" [routerLink]="['/collegue/create']" *ngIf="!showEmailInputfield" class="mr-5"> créer un nouveau collègue</a>
   <!-- <div *ngIf="showEmailInputfield; then thenBlock else elseBlock"></div>
   <ng-template #thenBlock><button  class="btn btn-primary" (click)="modif()"> Valider</button></ng-template>
   <ng-template #elseBlock><button  class="btn btn-primary" (click)="modif()"> Modifier</button></ng-template> -->
